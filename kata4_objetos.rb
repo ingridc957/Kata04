@@ -32,7 +32,6 @@ class DataHandling
     return  @colnames, @col1, @col2
   end
 
-
   def min_spread(names, col_1, col_2)
     for element in 0.. names.size-1
      @spread << (col_1[element] - col_2[element]).abs
