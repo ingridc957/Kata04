@@ -1,4 +1,4 @@
-
+#weather data
 day = []
 maxi = []
 mini = []
@@ -10,18 +10,13 @@ File.readlines("weather.dat").each do |line|
   #puts line[5..10]
 end
 
+#Eliminando lineas sin datos
 2.times{
-day.shift
-maxi.shift
-mini.shift
+  day.shift
+  maxi.shift
+  mini.shift
 }
 
-# puts "day"
-# puts day
-# puts "max"
-# puts max
-# puts "min"
-# puts min
 spread = []
 for element in 0..29
   spread << maxi[element] - mini[element]
@@ -29,12 +24,8 @@ end
 
 day_min_spread = day[spread.index(spread.min)]
 puts "The day number with the smallest temperature spread is June #{day_min_spread}"
-#File.open('weather.dat').readlines.each do |lineas|
-#  puts lineas
-#  end
 
-#### Una clase puede ser DIFERENCIAS
-
+# football data
 team = []
 goal = []
 against = []
@@ -43,9 +34,9 @@ File.readlines("football.dat").each do |line|
   team << line.split[1]
   goal << line.split[6].to_i
   against << line.split[8].to_i
-  #puts line[5..10]
 end
 
+#Eliminando lineas sin datos
 team.delete_at(18)
 team.delete_at(0)
 goal.delete_at(18)
@@ -61,14 +52,3 @@ end
 team_min_diff = team[goal_diff.index(goal_diff.min)]
 
 puts "The team with the smallest difference goal in for and against is #{team_min_diff}"
-
-# el que lee y organiza las columnas
-# el que hace las cuentas con las columnas
-
-# puts 'goal_diff 0'
-# puts goal_diff
-#
-# puts 'split 6 goal'
-# puts goal
-# puts 'split 8 against'
-# puts against
